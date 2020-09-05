@@ -4,8 +4,3 @@ docker build -t loeken/ant-media-server \
         --no-cache \
         .
 docker push loeken/ant-media-server
-
-
-        --build-arg MongoDBServer=ant-media-server_mongo_1 \
-        --build-arg MongoDBUsername=root \
-        --build-arg MongoDBPassword=test \
