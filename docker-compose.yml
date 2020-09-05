@@ -1,0 +1,26 @@
+version: '3'
+services:
+  anttest1:
+    image: loeken/ant-media-server
+    ports:
+      - 5080:5080
+    privileged: true
+    depends_on: 
+      - mongo
+
+  anttest2:
+    image: loeken/ant-media-server
+    ports:
+      - 5081:5080
+    privileged: true
+    depends_on: 
+      - mongo
+
+  mongo:
+    image: mongo:4.2-bionic
+#    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: test
+    ports:
+      - 27017:27017
